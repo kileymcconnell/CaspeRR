@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Vikram E. Chhatre" />
+  <meta name="dcterms.date" content="2020-01-31" />
+  <title>Introduction to R Programming Environment</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="avenir-white.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Introduction to R Programming Environment</h1>
+<p class="author">Vikram E. Chhatre</p>
+<p class="date">January 31, 2020</p>
+</header>
+<h4 id="wyoming-inbre-bioinformatics-core-ibcsite.uwyo.online-github.comwyoibc">Wyoming INBRE Bioinformatics Core | <a href="https://ibc.uwyo.online">ibcsite.uwyo.online</a> | <a href="https://github.com/wyoibc">github.com/wyoibc</a></h4>
+<p><br></p>
+<h2 id="note">Note:</h2>
+<p>Parts of this document contain detailed instructions. This is for reference only - something you can use if you <strong>later</strong> revisit this tutorial. During the workshop, this author will provide verbal instructions. You will primarily use this guide for the R syntax (i.e. code) it provides.</p>
+<p><br><br></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><p><a href="#what-is-r">1. What is R?</a></p></li>
+<li><p><a href="#what-is-r-studio">2. What is R-Studio</a></p></li>
+<li><p><a href="#getting-started">3. Getting Started</a></p></li>
+</ul>
+<p><br></p>
+<h2 id="what-is-r">1. What is R?</h2>
+<p>R is an open source, statistical data analysis and visualization program. It is also a computer programming language. There are many proprietary software programs that can be used for statistical data analysis. For example <code>SAS</code> and <code>MATLAB</code>. Most such programs cost money, even though it may or may not go out of your own pocket. These programs are also closed-source meaning that the computer code that is needed to make these programs work is usually a closely held secret and the end users are not privy to it. This stifles innovation.</p>
+<p>In contrast, the entire R programming language is open source. Scientists and programmers believe that this allows for and encourages further innovation. Because the code is freely available to anyone, it is constantly being modified and improved. Examples include adding new functionality and removing bugs. You may not do the same with closed source programs.</p>
+<p>When you install the R distribution on your computer, it comes with a range of basic functions, enough to perform basic but wide ranging statistical analyses (think ANOVA, T-test etc.) and then visualize the results (think histograms, scatterplots, barplots etc.). This suite of functions is together called the base-R distribution. The latest version of R is 3.6.2. Each version also gets a name. Version 3.6.2 is named <code>Dark and Stormy Night</code>. <code>R</code> was developed by the <code>R Foundation for Statistical Computing</code> located at <a href="https://r-project.org">https://r-project.org</a>, which provides a great deal of information related to R.</p>
+<p><br><br></p>
+<h2 id="what-is-r-studio">2. What is R-Studio?</h2>
+<p>In it’s most simplistic form, R can be run through a termianl which provides the commandline interface. Simply type <code>r</code> on either Linux, Macintosh or Windows inside a terminal (<code>CMD</code> program in Windows) and R will launch.</p>
+<center>
+<img src="rterminal.png" alt="R inside Terminal" width="600"/>
+</center>
+<p>However, not everyone is fond of commandline interfaces. R-Studio exists as a interface bridge between R and you. But that’s not the only thing it does. It is an extremely feature rich GUI program that brings you enhanced functionality to use R.</p>
+<p>If you think of R as the backbone then R-Studio provides a graphical user interface to interact with that backbone. When you launch R-Studio, it automatically detects the R software installed on your computer and interfaces with it. Let’s take a look at the R interface to become familiar with it.</p>
+<br>
+<center>
+<img src="rstudio.png" alt="R Studio Interface" width="800"/>
+</center>
+<p><br></p>
+<p>Much of the work you will do will do will happen in the two left panes of R-Studio. These are</p>
+<ul>
+<li><p><code>SOURCE</code> which is where you will write your R commands before executing them and</p></li>
+<li><p><code>CONSOLE</code> where the execution happens. The console is the same thing as running R in terminal.</p></li>
+</ul>
+<p>You can always type commands directly in the console without writing them in the source first. This allows you to test commands out. When your workflow begins to get more complex, the source comes in handy.</p>
+<p>You will get the hang of R-Studio once we start working through it. The author will explain more features as they become relevant for the task at hand.</p>
+<p><br><br></p>
+<h2 id="getting-started">3. Getting Started</h2>
+<p>We will start with very simple tasks and build on that. So that by the end of the day you will have a better idea of what R is capable of.</p>
+<p><br></p>
+<h3 id="r-as-calculator">3.1 R as Calculator</h3>
+<p>At a very basic level, R can be used as a calculator, both simple and scientific. When performing calculations, basic rules of Maths apply i.e. PEMDAS</p>
+<ul>
+<li>Products before Exponents</li>
+<li>Then Exponents</li>
+<li>Multiply and divide before you add or substract</li>
+</ul>
+<p>Let’s try some exercises:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dv">489</span> <span class="op">*</span><span class="st"> </span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="dv">5222</span><span class="op">/</span><span class="fl">40.78</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">(<span class="dv">32</span><span class="op">*</span><span class="dv">8</span>) <span class="op">+</span><span class="st"> </span>(<span class="dv">1000</span><span class="op">/</span><span class="fl">5.2</span>)</a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">log</span>(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw">log10</span>(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="dv">550</span><span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="kw">sqrt</span>(<span class="dv">302500</span>)</a></code></pre></div>
+<p>Here are the outcomes:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dv">489</span> <span class="op">*</span><span class="st"> </span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb2-3" title="3">[<span class="dv">1</span>] <span class="dv">9780</span></a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="dv">5222</span><span class="op">/</span><span class="fl">40.78</span></a>
+<a class="sourceLine" id="cb2-6" title="6">[<span class="dv">1</span>] <span class="fl">128.053</span></a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8">(<span class="dv">32</span><span class="op">*</span><span class="dv">8</span>) <span class="op">+</span><span class="st"> </span>(<span class="dv">1000</span><span class="op">/</span><span class="fl">5.2</span>)</a>
+<a class="sourceLine" id="cb2-9" title="9">[<span class="dv">1</span>] <span class="fl">448.3077</span></a>
+<a class="sourceLine" id="cb2-10" title="10"></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="kw">log</span>(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb2-12" title="12">[<span class="dv">1</span>] <span class="fl">1.94591</span></a>
+<a class="sourceLine" id="cb2-13" title="13"></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="kw">log10</span>(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb2-15" title="15">[<span class="dv">1</span>] <span class="fl">0.845098</span></a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="dv">550</span><span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb2-18" title="18">[<span class="dv">1</span>] <span class="dv">302500</span></a>
+<a class="sourceLine" id="cb2-19" title="19"></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="kw">sqrt</span>(<span class="dv">302500</span>)</a>
+<a class="sourceLine" id="cb2-21" title="21">[<span class="dv">1</span>] <span class="dv">550</span></a></code></pre></div>
+</body>
+</html>
